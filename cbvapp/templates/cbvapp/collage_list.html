@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body_block %}
+<div class="row">
+    <div class="col-md-12 py-3">
+      <h1 class='text-warning'>Here is the list of collages
+      <a href="{% url "cbvapp:create"%}" class='btn btn-success justify-align-center'>Add Collage</a>
+
+      </h1>
+      <ul class='list-group'><ol>
+        {% for collage in collages_list %}
+        <li>
+          <li class='list-group-item'>
+            <a href="{{collage.id}}">{{ collage.name }}</a>
+
+          </li>
+        </li>
+        {% endfor %}
+      </ol>
+      </ul>
+    </div>
+</div>
+{% endblock %}

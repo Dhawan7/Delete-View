@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>Mysite</title>
+    <style media="screen">
+      i{
+        padding:5px;
+        color:blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 px-0">
+          <nav class='navbar navbar-expand-sm bg-dark navbar-dark'>
+            <a href="{% url "cbvapp:list" %}" class='navbar-brand'>Collages</a>
+            <ul class='navbar-nav mx-auto'>
+              <li class='nav-item'>
+                <a href="{% url "index"%}" class='nav-link'>Home</a>
+              </li>
+              <li class='nav-item'>
+                <a href="{% url "admin:index" %}" class='nav-link'>Admin</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      {% block body_block %}
+
+      {% endblock %}
+    </div>
+  </body>
+</html>

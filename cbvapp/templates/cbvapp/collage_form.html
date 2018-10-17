@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% load bootstrap4 %}
+<div class="container-fluid">
+  <div class="row py-5">
+    <div class="col-md-12 text-center">
+      <h1 class='alert alert-primary'>
+        {% if not form.instance.pk %}
+          Add Collage
+        {% else %}
+          Update Collage
+        {% endif %}
+      </h1>
+    </div>
+    <div class="col-md-4 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class='btn btn-primary'>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
